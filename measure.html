@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Measure — Quantity Measurement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/measure.css">
+  <link rel="stylesheet" href="css/toast.css">
+  <script src="js/auth-guard.js"></script>
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <main class="measure-page">
+
+    <!-- TYPE SELECTION -->
+    <div class="panel-card">
+      <p class="section-label">Choose Type</p>
+      <div class="type-cards">
+
+        <button class="type-card active" data-type="LengthUnit">
+          <!-- Ruler icon -->
+          <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <g transform="rotate(-30 32 32)">
+              <rect x="6" y="24" width="52" height="16" rx="4" fill="#DBEAFE"/>
+              <rect x="6" y="24" width="52" height="16" rx="4" fill="none" stroke="#3B82F6" stroke-width="4"/>
+              <path d="M14 24v6M22 24v4M30 24v6M38 24v4M46 24v6" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
+            </g>
+          </svg>
+          <span>Length</span>
+        </button>
+
+        <button class="type-card" data-type="WeightUnit">
+          <!-- Bag icon -->
+          <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 56h28c4.4 0 6-3.6 5-8l-3-20c-1-6-4-10-16-10-12 0-15 4-16 10l-3 20c-1 4.4.6 8 5 8z"
+              fill="#FEF3C7" stroke="#F59E0B" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M26 18v-6c0-3.3 2.7-6 6-6s6 2.7 6 6v6" fill="none" stroke="#F59E0B" stroke-width="4" stroke-linecap="round"/>
+            <line x1="22" y1="36" x2="42" y2="36" stroke="#F59E0B" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <span>Weight</span>
+        </button>
+
+        <button class="type-card" data-type="TemperatureUnit">
+          <!-- Thermometer icon -->
+          <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 6c-4.4 0-8 3.6-8 8v24.5c-3.6 2.6-6 6.8-6 11.5 0 7.7 6.3 14 14 14 7.7 0 14-6.3 14-14 0-4.7-2.4-8.9-6-11.5V14c0-4.4-3.6-8-8-8z"
+              fill="#FEE2E2" stroke="#EF4444" stroke-width="4" stroke-linejoin="round"/>
+            <circle cx="32" cy="50" r="8" fill="#EF4444"/>
+            <path d="M29 50V26h6v24z" fill="#EF4444"/>
+            <line x1="20" y1="20" x2="24" y2="20" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+            <line x1="20" y1="28" x2="24" y2="28" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span>Temperature</span>
+        </button>
+
+        <button class="type-card" data-type="VolumeUnit">
+          <!-- Beaker icon -->
+          <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 12l4 38c.5 4 3 6 12 6 9 0 11.5-2 12-6l4-38" fill="#CFFAFE" stroke="#06B6D4" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M18 32l2 18c.5 4 3 6 12 6 9 0 11.5-2 12-6l2-18z" fill="#06B6D4"/>
+            <ellipse cx="32" cy="12" rx="16" ry="4" fill="none" stroke="#06B6D4" stroke-width="4"/>
+            <line x1="12" y1="24" x2="18" y2="24" stroke="#06B6D4" stroke-width="3" stroke-linecap="round"/>
+            <line x1="14" y1="36" x2="20" y2="36" stroke="#06B6D4" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span>Volume</span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- ACTION + INPUTS -->
+    <div class="panel-card">
+
+      <!-- Action tabs -->
+      <p class="section-label">Choose Action</p>
+      <div class="action-tabs">
+        <button class="tab-btn active" data-action="compare">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+          Comparison
+        </button>
+        <button class="tab-btn" data-action="convert">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="16 3 20 7 16 11"/><line x1="4" y1="7" x2="20" y2="7"/>
+            <polyline points="8 21 4 17 8 13"/><line x1="20" y1="17" x2="4" y2="17"/>
+          </svg>
+          Conversion
+        </button>
+        <button class="tab-btn" data-action="arithmetic">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+          Arithmetic
+        </button>
+      </div>
+
+      <!-- Input grid -->
+      <div class="input-grid">
+
+        <!-- FROM column -->
+        <div class="input-col">
+          <label class="input-label" id="label-val1">FROM</label>
+          <input class="num-input" type="number" id="from-value" placeholder="0" value="1">
+          <div class="select-wrapper">
+            <button class="select-btn" id="from-unit-btn">
+              <span id="from-unit-label">Feet</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="select-menu" id="from-unit-menu"></div>
+          </div>
+        </div>
+
+        <!-- Center bridge -->
+        <div class="center-bridge">
+          <button class="center-circle" id="btn-center" data-mode="swap">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+          <!-- Operator dropdown (arithmetic mode) -->
+          <div class="op-dropdown" id="op-dropdown">
+            <div class="op-option active" data-op="add">+</div>
+            <div class="op-option" data-op="subtract">−</div>
+            <div class="op-option" data-op="divide">÷</div>
+          </div>
+        </div>
+
+        <!-- TO column -->
+        <div class="input-col" id="to-col">
+          <label class="input-label" id="label-val2">TO</label>
+          <input class="num-input" type="number" id="to-value" placeholder="0" value="1000">
+          <div class="select-wrapper">
+            <button class="select-btn" id="to-unit-btn">
+              <span id="to-unit-label">Inches</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="select-menu" id="to-unit-menu"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Calculate -->
+      <button class="btn-calculate" id="btn-calculate">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
+        Calculate
+      </button>
+
+      <!-- Result -->
+      <div class="result-section">
+        <p class="section-label">Result</p>
+        <div class="result-box" id="result-box">
+          <div class="result-indicator" id="result-indicator"></div>
+          <div class="result-text muted" id="result-text">
+            Select a type and action, then click Calculate.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="js/api-client.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/measure-app.js"></script>
+</body>
+</html>

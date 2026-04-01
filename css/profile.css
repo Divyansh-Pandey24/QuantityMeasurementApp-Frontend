@@ -1,0 +1,140 @@
+/* =============================================
+   PROFILE PAGE
+   ============================================= */
+
+.profile-page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+.profile-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 2.5rem;
+  border: 1px solid rgba(255,255,255,.9);
+}
+
+/* ── Avatar + info ── */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(44,79,224,.25);
+}
+
+.profile-info h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: .2rem;
+}
+
+.profile-info p {
+  color: var(--text-secondary);
+  font-size: .9rem;
+}
+
+.profile-role {
+  display: inline-flex;
+  align-items: center;
+  padding: .2rem .65rem;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: .75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  margin-top: .35rem;
+}
+
+/* ── Divider ── */
+.profile-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* ── Password form ── */
+.profile-section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: .4rem;
+}
+
+.profile-section-desc {
+  font-size: .875rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.profile-form { display: flex; flex-direction: column; gap: 1rem; }
+
+.profile-field { display: flex; flex-direction: column; gap: .4rem; }
+
+.profile-field label {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.profile-field .pw-wrapper { position: relative; }
+.profile-field .pw-wrapper input { padding-right: 2.8rem; }
+
+.profile-field input {
+  width: 100%;
+  padding: .72rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: .95rem;
+  color: var(--text);
+  background: var(--surface-2);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  font-family: var(--font);
+}
+
+.profile-field input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(44,79,224,.1);
+  background: var(--surface);
+  outline: none;
+}
+
+.btn-update {
+  width: 100%;
+  padding: .85rem;
+  background: var(--primary);
+  color: white;
+  font-size: .95rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  margin-top: .5rem;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.btn-update:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 4px 12px rgba(44,79,224,.25);
+}
+
+.btn-update:disabled { opacity: .5; cursor: not-allowed; }

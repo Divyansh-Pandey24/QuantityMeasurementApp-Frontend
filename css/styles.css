@@ -1,0 +1,77 @@
+/* =============================================
+   QUANTITY MEASUREMENT — Global Styles
+   ============================================= */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary:        #2C4FE0;
+  --primary-dark:   #1E3BB8;
+  --primary-light:  #EEF1FD;
+  --primary-100:    #DBEAFE;
+  --accent:         #4F6EF7;
+
+  --bg:             #EDF0FA;
+  --surface:        #FFFFFF;
+  --surface-2:      #F8FAFF;
+
+  --text:           #1A1F36;
+  --text-secondary: #64748B;
+  --text-muted:     #94A3B8;
+
+  --border:         #E2E8F0;
+  --border-focus:   #2C4FE0;
+
+  --success:        #10B981;
+  --success-bg:     #D1FAE5;
+  --warning:        #F59E0B;
+  --warning-bg:     #FEF3C7;
+  --error:          #EF4444;
+  --error-bg:       #FEE2E2;
+
+  --radius-sm:      8px;
+  --radius-md:      14px;
+  --radius-lg:      20px;
+  --radius-xl:      28px;
+
+  --shadow-sm:      0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md:      0 4px 16px rgba(44,79,224,.10), 0 1px 4px rgba(0,0,0,.06);
+  --shadow-lg:      0 10px 40px rgba(44,79,224,.15), 0 2px 8px rgba(0,0,0,.08);
+
+  --transition:     .18s cubic-bezier(.4,0,.2,1);
+  --font:           'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button { font-family: var(--font); cursor: pointer; border: none; background: none; }
+
+input, select, textarea {
+  font-family: var(--font);
+  outline: none;
+}
+
+/* ── Utility ── */
+.hidden { display: none !important; }
+
+.text-sm    { font-size: .875rem; }
+.text-xs    { font-size: .75rem; }
+.text-muted { color: var(--text-muted); }
+.text-secondary { color: var(--text-secondary); }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }

@@ -1,0 +1,11 @@
+# IDE metadata — IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# IDE metadata — VS Code
+.vscode/
+
+#Dependencies Installed
+node_modules
